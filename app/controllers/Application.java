@@ -29,6 +29,9 @@ public class Application extends Controller {
     }
 
     public static void index() {
+        response.setHeader("X-Content-Type-Options", "nosniff");
+        response.setHeader("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; frame-src 'self'; connect-src 'self'; object-src 'none'; media-src 'self';");
+
         checkUser();
 
         User u = (User) renderArgs.get("user");

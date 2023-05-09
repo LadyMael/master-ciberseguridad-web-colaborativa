@@ -8,6 +8,7 @@ import play.mvc.Controller;
 public class PublicContentBase extends Controller {
 
     public static void register(){
+        response.setHeader("X-Content-Type-Options", "nosniff");
         render();
     }
 
@@ -18,6 +19,7 @@ public class PublicContentBase extends Controller {
     }
 
     public static void registerComplete(){
+        response.setHeader("X-Content-Type-Options", "nosniff");
         render();
     }
 }
